@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <RootNamespace>Brx.AI.Tokenizer</RootNamespace>
+    <AssemblyName>Brx.AI.Tokenizer</AssemblyName>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Brx.Hpc\Brx.Hpc.csproj" />
+    <ProjectReference Include="..\Brx.Text\Brx.Text.csproj" />
+  </ItemGroup>
+
+</Project>
