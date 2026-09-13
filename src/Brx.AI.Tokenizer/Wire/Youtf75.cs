@@ -189,11 +189,11 @@ internal static class Youtf75
       //
       // there is a branchless version:
       //
-      uint x = (uint)(ch - 'a');
-      uint y = (uint)(25 - x);
-      uint isLower = (x ^ y) >> 31;   // 1 if in range, 0 otherwise
-      return 1 + (int)isLower;
-
+      const int range = 'z' - 'a';   // 25
+      int v = ch - 'a';
+      uint mask = (uint)(v | (range - v)) >> 31;   // unsigned shift
+      int isLower = (int)(mask ^ 1);
+      return 1 + isLower;
    }
 
    private static void EmitLowercaseUtf7Char(char ch, bool isLower, Span<char> output, ref int outputIndex)
